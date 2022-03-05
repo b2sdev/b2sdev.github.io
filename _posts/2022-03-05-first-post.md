@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Jekyll!"
-date: 2017-10-20 08:26:28 -0400
+date: 2022-03-04 09:00:00 -0900
 categories: blog
 ---
 
@@ -10,7 +10,11 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-​`python def print_hi(name): print("hello", name) print_hi('Tom') ​`
+```python 
+def print_hi(name): 
+  print("hello", name) 
+print_hi('Tom')
+```
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
