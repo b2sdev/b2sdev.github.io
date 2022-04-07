@@ -2,7 +2,7 @@
 title: "[초등수학] 6의 배수"
 date: 2022-04-07 22:30:00 +0900
 categories: blog ps
-tags: 문제해결 ps 알고리즘 algorithm 그리디 greedy 탐욕법 초등수학
+tags: 문제해결 ps 알고리즘 algorithm 초등수학 재귀 recursion
 ---
 
 딸아이가 푸는 초등학교 5학년 수학 문제집에 나오는 문제를 프로그래밍해보았다.
