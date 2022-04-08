@@ -26,13 +26,11 @@ from collections import deque
 
 def check(cards, used):
     global ans
-    # 카드를 이미 3장 뽑았으므로 더 이상 뽑지 않는다.
-    if len(cards) > 3:
-        return
     # 카드를 3장 다 뽑았을 때, 각 자리의 숫자의 합이 3의 배수가 되는지 확인한다.
-    if len(cards) == 3 and sum(cards) % 3 == 0:
-        # print(list(cards))
-        ans += 1
+    if len(cards) == 3:
+        if sum(cards) % 3 == 0:
+            # print(list(cards))
+            ans += 1
         return
     for card in a:
         if card in used:
@@ -48,10 +46,8 @@ def check(cards, used):
 
 a = [2, 3, 4, 5, 7]
 
-cards = deque([])
-used = {}
 ans = 0
-check(cards, used)
+check(deque([]), dict())
 print(ans)
 ```
 
