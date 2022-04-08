@@ -5,7 +5,7 @@ categories: blog ps
 tags: 문제해결 ps 알고리즘 algorithm 초등수학 재귀 자기호출 recursion 완전탐색 brute-force
 ---
 
-초등학교 5학년 수학 문제를 다양한 방식으로 프로그래밍하여 풀어 본다.
+초등학교 5학년 수학 문제를 다양한 방식으로 프로그래밍하여 풀어본다.
 
 # 문제
 다음과 같은 다섯 자리 수를 9의 배수가 되게 만들려고 합니다. 만들 수 있는 가장 큰 수와 가장 작은 수를 각각 구하시오.
@@ -20,47 +20,83 @@ tags: 문제해결 ps 알고리즘 algorithm 초등수학 재귀 자기호출 re
 * 가장 작은 수 : 13086
 
 # 코드 #1  
-* 0~9의 숫자를 중복하여 두 번 선택하는 중복 순열 문제와 같다. 경우의 수가 100이므로 brute-force로 풀 수 있다.
+* 0~9의 숫자를 중복하여 두 번 선택하는 중복 순열 문제와 같다. 경우의 수가 100이므로 brute-force로 풀 수 있다. 시간 복잡도는 O(N^2)이다.
+
 ```python
 num = "13■△6"
-s = 0
-for c in num:
+nums = list(num)
+
+partial_sum = 0 # 주어진 숫자들의 합
+unknowns = [] # 찾아야 할 숫자들의 위치
+
+for i, c in enumerate(nums):
   if c.isdigit():
-    s += int(c)
+    partial_sum += int(c)
+  else:
+    unknowns.append(i)
+
 cand = []
+
 for a in range(0, 10):
   for b in range(0, 10):
-    if (s + a + b) % 9 == 0:
+    if (partial_sum + a + b) % 9 == 0:
       cand.append((a, b))
-print(cand[-1], cand[0])
+
+def show(nums, digits):
+  for i, v in digits:
+    nums[i] = str(v)
+  print(''.join(nums))
+
+show(nums, zip(unknowns, cand[-1]))
+show(nums, zip(unknowns, cand[0]))
 ```
 
 # 코드 #2
-* 찾아야 할 숫자가 두 개밖에 없으니, 최소값과 최대값을 바로 찾아내면 시간복잡도를 O(N)으로 줄일 수는 있다.
+* (찾아야 하는 수가 두 개 뿐이므로) 만들 수 있는 9의 배수의 최소값과 최대값을 먼저 찾고, 최소값과 최대값을 갖는 숫자의 조합을 계산해낸다.
+
 ```python
+num = "13■△6"
+nums = list(num)
+
+partial_sum = 0 # 주어진 숫자들의 합
+unknowns = [] # 찾아야 할 숫자들의 위치
+
+for i, c in enumerate(nums):
+  if c.isdigit():
+    partial_sum += int(c)
+  else:
+    unknowns.append(i)
+
+cand = []
 mul9 = 9 # 9의 배수
-# 최소값 찾기
-for n in range(0, 10):
-  while mul9 < s + a:
-    mul9 += 9
-  b = mul9 - s - a
-  cand.append((a, b))
-  break
 
-mul9 = 9
-# 최대값 찾기
-for n in range(9, -1, -1):
-  while mul9 < s + a:
-    mul9 += 9
-  b = mul9 - s - a
-  cand.append((a, b))
-  break
+# 만들 수 있는 9의 배수의 최소값 찾기
+while mul9 < partial_sum:
+  mul9 += 9
+min_mul9 = mul9
 
-print(cand[-1], cand[0])
+# 최소값 조합
+a = 0
+b = min_mul9 - partial_sum - a
+cand.append([a, b])
+
+# 만들 수 있는 9의 배수의 최대값 찾기
+while mul9 < partial_sum + 9 + 9:
+  mul9 += 9
+max_mul9 = mul9 - 9
+
+# 최대값 조합
+a = 9
+b = max_mul9 - partial_sum - a
+cand.append([a, b])
+
+show(nums, zip(unknowns, cand[-1]))
+show(nums, zip(unknowns, cand[0]))
 ```
 
 # 코드 #3
-* 찾아야 하는 숫자가 두 개가 아니라 훨씬 더 많다면 위와 같은 방법으로는 해결할 수 없다. 재귀 호출을 적용해본다.
+* 찾아야 하는 숫자가 두 개가 아니라 훨씬 더 많다면 위와 같은 방법으로는 해결할 수 없다. 일반화하여 재귀 호출을 적용해본다.
+
 ```python
 def pick(picked, to_pick, target):
   """ 
@@ -86,13 +122,10 @@ def pick(picked, to_pick, target):
   return ret
   
 num = "13■△6"
-
-# Python에서 String은 immutable하여 replace가 되지 않는다.
-# 찾은 숫자로 수를 만들기 위해 mutablie한 list로 변환 후,
-# 찾은 값을 특정 index에 assign 후 수로 변환할 것이다.
 nums = list(num)
-partial_sum = 0 # 주어진 숫자들의 합
-unknowns = [] # 찾아야 할 숫자들의 위치
+
+partial_sum = 0
+unknowns = []
 
 for i, c in enumerate(nums):
   if c.isdigit():
@@ -115,15 +148,11 @@ for mul9 in range(9, partial_sum + (to_pick * 9) + 1, 9):
     # 이 조합을 뒤집으면 가장 큰 수의 조합이 됨
     cand.append(picked[::-1])
 
-# 찾은 숫자 조합 리스트를 역순으로 정렬
-cand.sort(reverse=True)
+# 찾은 숫자 조합 리스트를 정렬
+cand.sort()
 
-# ■와 △를 찾은 숫자 조합의 숫자들로 변환 후
-# 가장 큰 수와 가장 작은 수를 출력
-for comb in (cand[0], cand[-1]):
-  for i in range(len(comb)):
-    nums[unknowns[i]] = str(comb[i])
-  print(''.join(nums))
+show(nums, zip(unknowns, cand[-1]))
+show(nums, zip(unknowns, cand[0]))
 ```
 
 # 코드 #4
@@ -132,8 +161,8 @@ for comb in (cand[0], cand[-1]):
 import itertools
 
 num = "13■△6"
-
 nums = list(num)
+
 partial_sum = 0
 unknowns = []
 
@@ -149,21 +178,19 @@ mul9 = 9
 while mul9 < partial_sum:
     mul9 += 9
 
-while mul9 <= partial_sum + (len(unknowns) * 9):
+while mul9 < partial_sum + (len(unknowns) * 9):
   target = mul9 - partial_sum
-  for comb in itertools.product(range(10), repeat=len(unknowns)):
-    if sum(comb) == target:
-      cand.append(list(comb))
-      cand.append(list(comb)[::-1])
+  for prod in itertools.product(range(10), repeat=len(unknowns)):
+    if sum(prod) == target:
+      cand.append(list(prod))
+      cand.append(list(prod)[::-1])
       break
   mul9 += 9
   
-cand.sort(reverse=True)
+cand.sort()
 
-for comb in (cand[0], cand[-1]):
-  for i in range(len(comb)):
-    nums[unknowns[i]] = str(comb[i])
-  print(''.join(nums))
+show(nums, zip(unknowns, cand[-1]))
+show(nums, zip(unknowns, cand[0]))
 ```
 
 # 참고
