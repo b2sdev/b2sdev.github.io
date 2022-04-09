@@ -190,10 +190,10 @@ while mul9 < partial_sum:
 
 while mul9 < partial_sum + (len(unknowns) * 9):
   target = mul9 - partial_sum
-  for prod in itertools.product(range(10), repeat=len(unknowns)):
-    if sum(prod) == target:
-      cand.append(list(prod))
-      cand.append(list(prod)[::-1])
+  for comb in itertools.combinations_with_replacement(range(10), len(unknowns)):
+    if sum(comb) == target:
+      cand.append(list(comb))
+      cand.append(list(comb)[::-1])
       break
   mul9 += 9
   
