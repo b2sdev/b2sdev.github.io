@@ -81,9 +81,12 @@ b = min_mul9 - partial_sum - a
 cand.append([a, b])
 
 # 만들 수 있는 9의 배수의 최대값 찾기
-while mul9 < partial_sum + 9 + 9:
+while True:
   mul9 += 9
-max_mul9 = mul9 - 9
+  if mul9 < partial_sum + (9 * 2):
+    continue
+  break
+max_mul9 = mul9
 
 # 최대값 조합
 a = 9
