@@ -42,13 +42,18 @@ for a in range(0, 10):
     if (partial_sum + a + b) % 9 == 0:
       cand.append((a, b))
 
-def show(nums, digits):
+show(nums, zip(unknowns, cand[-1]))
+show(nums, zip(unknowns, cand[0]))
+```
+
+* Python에서 String은 immutable하여 replace가 되지 않는다. Mutable한 list로 변환 후 replace 할 값을 특정 index에 assign 후 출력하기 위해 아래 함수를 사용한다. digits에는 replace 할 문자의 위치(index)와 변활될 문자의 튜플(리스트)의 리스트를 전달한다.
+```python
+from typing import List
+
+def show(nums: List[int], digits: List[List[int]]) -> None:
   for i, v in digits:
     nums[i] = str(v)
   print(''.join(nums))
-
-show(nums, zip(unknowns, cand[-1]))
-show(nums, zip(unknowns, cand[0]))
 ```
 
 # 코드 #2
