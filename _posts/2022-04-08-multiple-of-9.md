@@ -157,6 +157,7 @@ show(nums, zip(unknowns, cand[0]))
 
 # 코드 #4
 * 재귀가 아닌 Python의 itertools 라이브러리를 활용하여 구현할 수도 있다.
+
 ```python
 import itertools
 
