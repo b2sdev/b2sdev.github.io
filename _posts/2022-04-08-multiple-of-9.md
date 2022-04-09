@@ -203,6 +203,8 @@ show(nums, zip(unknowns, cand[-1]))
 show(nums, zip(unknowns, cand[0]))
 ```
 
+* 주어진 숫자가 "13■△●"인 경우 가장 큰 수와 가장 작은 수는 13995와 13005가 된다.
+
 # 참고
 * 디딤돌 최상위 초등수학 5-1 2단원 12번
 * https://www.youtube.com/watch?v=G843vLq4sVU
