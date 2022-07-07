@@ -5,11 +5,9 @@ categories: blog
 tags: sql
 ---
 
-# SQL로 각 카테고리의 최상위 레코드를 추출하기
-
 데이터에서 category별로 score가 가장 높은 최상위의 레코드를 추출해보자.
 
-인기 상품의 상품 ID와 카테고리, 점수 정보를 가진 인기 상품 테이블이 있다. 
+아래와 같이 인기 상품의 상품 ID와 카테고리, 점수 정보를 가진 테이블이 있다. 
 
 ```
 product_id|category|score|
@@ -33,7 +31,7 @@ drama   |D001      |
 action  |A001      |
 ```
 
-[카테고리별 상위 n개의 레코드를 추출](/_posts/2022-07-06-sql-top-n-for-each-category.md)할 때는 서브 쿼리를 사용했으나, **최상위 상품만을 추출**하는 경우는 FIRST_VALUE 윈도 함수를 사용하고 SELECT DISTINCT 구문으로 결과를 집약할 수 있다.
+[카테고리별 상위 n개의 레코드를 추출](/_posts/2022-07-06-sql-top-n-for-each-category)할 때는 서브 쿼리를 사용했으나, **최상위 상품만을 추출**하는 경우는 FIRST_VALUE 윈도 함수를 사용하고 SELECT DISTINCT 구문으로 결과를 집약한다.
 
 ```sql
 -- (2) DISTINCT 구문을 사용해 중복 제거   
