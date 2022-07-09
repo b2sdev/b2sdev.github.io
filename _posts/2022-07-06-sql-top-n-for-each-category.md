@@ -5,8 +5,6 @@ categories: blog
 tags: sql
 ---
 
-# SQL로 각 카테고리의 상위 n개 레코드를 추출하기
-
 데이터에서 category별로 score가 가장 높은 top 3의 레코드를 추출해보자.
 
 인기 상품의 상품 ID와 카테고리, 점수 정보를 가진 인기 상품 테이블이 있다. 
