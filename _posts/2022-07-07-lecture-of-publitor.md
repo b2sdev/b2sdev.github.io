@@ -7,7 +7,7 @@ tags: dev.life book
 
 **새로운 퍼블리터의 시대**라는 강의를 듣고 왔다.
 
-[![새로운 퍼블리터의 시대](https://postfiles.pstatic.net/MjAyMjA2MjFfMTQ4/MDAxNjU1ODAwMTM3Nzc2.UCAW67HtooOhiZl8rhpQKJTFSOGMclIKYdv5DY1Rmqgg.zMQJ3y4Aym-2P6cip54_TIqChs4EUovwIwQC9w_pj_0g.JPEG.khhan21/%ED%8A%B9%EA%B0%95%ED%99%8D%EB%B3%B4_%EC%9B%B9%EC%9E%90%EB%B3%B4.jpg)](https://blog.naver.com/khhan21/222782717020)
+[![새로운 퍼블리터의 시대](https://postfiles.pstatic.net/MjAyMjA2MjFfMTQ4/MDAxNjU1ODAwMTM3Nzc2.UCAW67HtooOhiZl8rhpQKJTFSOGMclIKYdv5DY1Rmqgg.zMQJ3y4Aym-2P6cip54_TIqChs4EUovwIwQC9w_pj_0g.JPEG.khhan21/%ED%8A%B9%EA%B0%95%ED%99%8D%EB%B3%B4_%EC%9B%B9%EC%9E%90%EB%B3%B4.jpg?type=w580)](https://blog.naver.com/khhan21/222782717020)
 
 퍼블리터(publitor)란 에디터(editor·편집자)면서 퍼블리셔(publisher·출판인)인 사람을 말한다.
 
