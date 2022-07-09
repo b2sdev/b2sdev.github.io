@@ -31,7 +31,7 @@ drama   |D001      |
 action  |A001      |
 ```
 
-[카테고리별 상위 n개의 레코드를 추출](/blog/2022-07-06-sql-top-n-for-each-category)할 때는 서브 쿼리를 사용했으나, **최상위 상품만을 추출**하는 경우는 FIRST_VALUE 윈도 함수를 사용하고 SELECT DISTINCT 구문으로 결과를 집약한다.
+[카테고리별 상위 n개의 레코드를 추출](/blog/2022-07-06-sql-top-n-for-each-category/)할 때는 서브 쿼리를 사용했으나, **최상위 상품만을 추출**하는 경우는 FIRST_VALUE 윈도 함수를 사용하고 SELECT DISTINCT 구문으로 결과를 집약한다.
 
 ```sql
 -- (2) DISTINCT 구문을 사용해 중복 제거   
