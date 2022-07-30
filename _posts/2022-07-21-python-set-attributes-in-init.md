@@ -1,5 +1,5 @@
 ---
-title: "[Git] git add 취소(unstage)하기"
+title: "[Python] 클래스의 속성(attribute)를 한방에 설정하기"
 date: 2022-07-21 22:05:00 +0900
 categories: blog dev
 tags: python 파이썬
