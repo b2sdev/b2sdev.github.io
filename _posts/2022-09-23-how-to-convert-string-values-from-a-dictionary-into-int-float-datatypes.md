@@ -1,7 +1,7 @@
 ---
 title: "[Python] List에 담긴 dictionary의 값의 datatype을 변경하기"
 date: 2022-09-23 22:05:00 +0900
-categories: blog dev Data+AI
+categories: dev Data+AI
 tags: Pandas
 ---
 
