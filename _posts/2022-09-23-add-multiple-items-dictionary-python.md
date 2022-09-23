@@ -1,5 +1,5 @@
 ---
-title: "[Python] Dictionaly에 새로운 item들을 추가"
+title: "[Python] Dictionary에 새로운 item들을 추가"
 date: 2022-09-23 23:15:00 +0900
 categories: dev python
 tags: Python
