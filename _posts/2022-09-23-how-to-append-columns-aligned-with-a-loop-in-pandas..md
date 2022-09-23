@@ -5,6 +5,12 @@ categories: blog dev Data+AI
 tags: Pandas
 ---
 
+### Problem
+
+분산된 여러 파일의 데이터를 읽어서 하나의 dataframe으로 만들고 싶다.
+
+### Solution
+
 1. 각각의 파일을 읽어 dataframe의 list를 만든다.
 
 ```python
