@@ -11,7 +11,7 @@ Python으로 어제 날짜를 구하려면 datetime 모듈의 timedelta 함수�
 
 Python으로 어제 날짜를 구하고 싶다.
 
-### Solutio
+### Solution
 
 [`datetime.timedelta()`](https://docs.python.org/library/datetime.html#timedelta-objects)를 이용한다.
 
