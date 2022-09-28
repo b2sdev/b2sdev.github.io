@@ -1,7 +1,7 @@
 ---
 title: "[Pandas] 분산된 여러 파일의 데이터를 읽어서 하나의 dataframe으로 만들기"
 date: 2022-09-23 22:05:00 +0900
-categories: blog dev Data+AI
+categories: dev data.ai
 tags: Pandas
 ---
 
