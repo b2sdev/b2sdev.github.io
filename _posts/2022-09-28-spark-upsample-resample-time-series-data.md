@@ -57,3 +57,6 @@ df.withColumn("datetime", F.window("dt", "15 minutes")["end"])
 df.withColumn("datetime", F.window("dt", "5 minutes")["end"] \
   .groupBy("datetime").agg(...)
 ```
+
+### Reference
+- https://stackoverflow.com/questions/63818647/pyspark-upsample-resample-time-series-data
