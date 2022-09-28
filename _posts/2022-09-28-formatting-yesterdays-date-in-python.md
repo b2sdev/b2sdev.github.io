@@ -23,3 +23,6 @@ from datetime import date, datetime, timedelta
 yeaterday = datetime.now() - timedelta(days=1)
 yesterday.strftime("%Y%m%d)
 ```
+
+### Reference
+- https://stackoverflow.com/questions/1712116/formatting-yesterdays-date-in-python
