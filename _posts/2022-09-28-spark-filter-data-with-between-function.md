@@ -1,7 +1,7 @@
 ---
-title: "[Spark] date range로 시계열 데이터 필터링"
+title: "[Spark] Date range로 시계열 데이터 필터링"
 date: 2022-09-28 20:00:00 +0900
-categories: dev data.ai
+categories: dev spark
 tags: Spark
 ---
 
