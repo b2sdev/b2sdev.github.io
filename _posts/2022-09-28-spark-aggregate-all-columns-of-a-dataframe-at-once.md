@@ -1,7 +1,7 @@
 ---
 title: "[Spark] Dataframe의 모든 컬럼을 한 번에 집계하기"
 date: 2022-09-28 19:00:00 +0900
-categories: dev Data+AI
+categories: dev spark
 tags: Spark
 ---
 
