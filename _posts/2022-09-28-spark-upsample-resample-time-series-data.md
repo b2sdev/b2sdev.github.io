@@ -1,7 +1,7 @@
 ---
 title: "[Spark] 시계열 데이터를 일정한 주기를 갖도록 정리하기"
 date: 2022-09-28 19:10:00 +0900
-categories: dev Data+AI
+categories: dev spark
 tags: Spark
 ---
 
