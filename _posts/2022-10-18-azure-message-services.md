@@ -1,9 +1,9 @@
 ---
-title: "[Azure] 애저 메시지 서비스 비교"
+title: "애저 메시지 서비스 비교"
 date: 2022-10-18 22:20:00 +0900
 categories: dev architecture
 tags: msa azure cloud architecture
-----
+---
 
 Azure의 메시지 서비스를 비교해보고 목적에 맞는 서비스를 이용해보자.
 
